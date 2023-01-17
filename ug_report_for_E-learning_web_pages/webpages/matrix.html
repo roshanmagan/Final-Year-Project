@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+  <script src="sylvester.src.js"></script>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="navBar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li>Topics</li>
+      <li>References</li>
+    </ul>
+  </nav>
+  <div class="container">
+
+
+  <form class="Matrix_multi" action="index.html" method="post">
+    <input type="text" id="rowSize" value="3"/>
+    <input type="text" id="colSize" value="3"/>
+      <button type="button" name="button" onclick="createFeild()">+</button>
+
+<div class="matrix">
+  <p class="A">Matrix a</p>
+  <div id="Matrix_a">
+    <!-- <input type="text" id="aR1C1" size="4" value="1"/>
+    <input type="text" id="aR1C2" size="4" value="2"/>
+    <input type="text" id="aR1C3" size="4" value="3"/>
+
+  <br/>
+    <input type="text" id="aR2C1" size="4" value="4"/>
+    <input type="text" id="aR2C2" size="4" value="5"/>
+    <input type="text" id="aR2C3" size="4" value="6"/>
+  <br/>
+  <input type="text" id="aR3C1" size="4" value="7"/>
+  <input type="text" id="aR3C2" size="4" value="8"/>
+  <input type="text" id="aR3C3" size="4" value="9"/> -->
+
+  </div>
+
+    <p class="B">Matrix b</p>
+  <div id="Matrix_b">
+    <!-- <input type="text" id="bR1C1" size="4" value="1"/>
+   <input type="text" id="bR1C2" size="4" value="2"/>
+   <input type="text" id="bR1C3" size="4" value="3"/>
+   <br/>
+   <input type="text" id="bR2C1" size="4" value="4"/>
+   <input type="text" id="bR2C2" size="4" value="5"/>
+   <input type="text" id="bR2C3" size="4" value="6"/>
+   <br/>
+   <input type="text" id="bR3C1" size="4" value="7"/>
+   <input type="text" id="bR3C2" size="4" value="8"/>
+   <input type="text" id="bR3C3" size="4" value="9"/> -->
+  </div>
+  </div>
+  </br>
+
+  <div id="radio_buttons">
+    <p class="option">Please select your option</p>
+    <input type="radio" id="times" name="arth" value="multi">
+    <label for="AxB">A x B</label><br>
+    <input type="radio" id="plus" name="arth" value="add">
+    <label for="A+B">A + B</label><br>
+    <input type="radio" id="minus" name="arth" value="sub">
+    <label for="A-B">A - B</label>
+  </div>
+
+  <div id="M_result">
+    <input type="button" id="mButton" value="multi" />
+  </div>
+
+<p>Result</p>
+<div id="Matrix_c">
+      <!-- <input type="text" id="rR1C1" size="4" />
+      <input type="text" id="rR1C2" size="4" />
+      <input type="text" id="rR1C3" size="4" />
+      <br/>
+      <input type="text" id="rR2C1" size="4" />
+      <input type="text" id="rR2C2" size="4" />
+      <input type="text" id="rR2C3" size="4" />
+      <br/>
+      <input type="text" id="rR3C1" size="4" />
+      <input type="text" id="rR3C2" size="4" />
+      <input type="text" id="rR3C3" size="4" />
+      <br/> -->
+</div>
+</form>
+</div>
+  <script type="text/javascript" src="matrix.js"></script>
+</body>
+</html>

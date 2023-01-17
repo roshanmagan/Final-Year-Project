@@ -1,0 +1,47 @@
+body{
+  width: auto;
+  text-align: center;
+  overflow: hidden;
+}
+.container{
+  width: 100%;
+  border: 1px solid #BFBFBF;
+  background-color: #f7f7f2;
+  box-shadow: 10px 5px 4px #aaaaaa;
+  position: absolute;
+width: fit-content;
+height: fit-content;
+left:0;
+top:12%;
+
+}
+.matrix{
+  display: block;
+    border: 1px solid black;
+
+}
+
+.A{
+  display: inline;
+}
+.B{
+  display: inline;
+
+}
+
+/*
+#M_Result{
+  margin-top: 50px;
+  border: 1px solid black;
+}
+
+#Matrix_c{
+  border: 1px solid black;
+}
+
+/* radio buttons */
+
+#radio_buttons{
+  margin-top: 85px;
+/* border: 1px solid black; */
+}
