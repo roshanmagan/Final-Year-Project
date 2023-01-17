@@ -154,22 +154,6 @@ clearFeild(inputFeild_C,brC);
 
 }
 
-function createFeild_C(){
- if((document.getElementById('Matrix_c').children.length == 0)){
-    row = parseInt(document.getElementById('rowSize').value);
-    column = parseInt(document.getElementById('colSize').value);
-    for(i = 1;i < row+1; i++){
-      for(j = 1;j < column+1; j++){
-
-      }
-    }
-
-}else if((document.getElementById('Matrix_c').children.length == 0)){
-  let inputFeild_C = document.querySelectorAll(".inputC");
-  let brC = document.querySelectorAll(".brIDA");
-  clearFeild(inputFeild_C,brC);
-}
-}
 function clearFeild(inputFeild,brElement){
 
   inputFeild.forEach(function(item){
