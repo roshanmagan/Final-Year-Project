@@ -1,72 +1,116 @@
 window.onload = function(){
   var button = document.getElementById('mButton');
-  // button.addEventListener("click", createFeild_C);
   button.addEventListener("click", mCalculation);
 }
+
 var row = parseInt(document.getElementById('rowSize').value);
 var column = parseInt(document.getElementById('colSize').value);
 var count = 0;
 var inc = 0;
-const arrCID = ["rR1C1","rR1C2","rR1C3","rR2C1","rR2C2","rR2C3","rR3C1","rR3C2","rR3C3","rR4C1","rR4C2","rR4C3","rR5C1","rR5C2","rR5C3","rR6C1","rR6C2","rR6C3"];
+
 function increament(){
   count+=1;
 }
 
-function counts (){
-  inc +=1;
-}
 
 function mCalculation(){
-  const arrID = ["aR1C1","aR1C2","aR1C3","aR2C1","aR2C2","aR2C3","aR3C1","aR3C2","aR3C3","bR1C1","bR1C2","bR1C3","bR2C1","bR2C2","bR2C3","bR3C1","bR3C2","bR3C3"];
-  let arrCells = [];
-// createFeild_C();
-  for(let i = 0;i < arrID.length;i++){
-    arrCells[i] = document.getElementById(arrID[i]).value;
-    console.log(arrCells[i]);
-    console.log(arrID.length);
-
+  let arrIDA = [["aR1C1","aR1C2","aR1C3","aR1C4","aR1C5","aR1C6"],
+                ["aR2C1","aR2C2","aR2C3","aR2C4","aR2C5","aR2C6"],
+                ["aR3C1","aR3C2","aR3C3","aR3C4","aR3C5","aR3C6"],
+                ["aR4C1","aR4C2","aR4C3","aR4C4","aR4C5","aR4C6"],
+                ["aR5C1","aR5C2","aR5C3","aR5C4","aR5C5","aR5C6"],
+                ["aR6C1","aR6C2","aR6C3","aR6C4","aR6C5","aR6C6"]];
+  let arrIDB = [["bR1C1","bR1C2","bR1C3","bR1C4","bR1C5","bR1C6"],
+                ["bR2C1","bR2C2","bR2C3","bR2C4","bR2C5","bR2C6"],
+                ["bR3C1","bR3C2","bR3C3","bR3C4","bR3C5","bR3C6"],
+                ["bR4C1","bR4C2","bR4C3","bR4C4","bR4C5","bR4C6"],
+                ["bR5C1","bR5C2","bR5C3","bR5C4","bR5C5","bR5C6"],
+                ["bR6C1","bR6C2","bR6C3","bR6C4","bR6C5","bR6C6"]];
+  let arrCellsA = [];
+  let arrCellsB = [];
+  console.log(arrIDA);
+ // createFeild_C();
+for (var i = 0; i < row; i++) {
+    arrCellsA[i] = [];
+    arrCellsB[i] = [];
+    for (var j = 0; j < column; j++) {
+      arrCellsA[i][j] = document.getElementById(arrIDA[i][j]).value;
+      arrCellsB[i][j] = document.getElementById(arrIDB[i][j]).value;
+      console.log("arr A: "+arrCellsA[i]);
+      console.log("arr B: "+arrCellsB[i]);
+    }
   }
-      var A = $M([
-                  [+arrCells[0],+arrCells[1],+arrCells[2]],
-                  [+arrCells[3],+arrCells[4],+arrCells[5]],
-                  [+arrCells[6],+arrCells[7],+arrCells[8]]
-                  ]);
-      var B = $M([
-                  [+arrCells[9],+arrCells[10],+arrCells[11]],
-                  [+arrCells[12],+arrCells[13],+arrCells[14]],
-                  [+arrCells[15],+arrCells[16],+arrCells[17]]
-                  ]);
 
 
-      var res = A.x(B);
+      // var A = $M([
+      //             [+arrCells[0],+arrCells[1],+arrCells[2]],
+      //             [+arrCells[3],+arrCells[4],+arrCells[5]],
+      //             [+arrCells[6],+arrCells[7],+arrCells[8]]
+      //             ]);
+      // var B = $M([
+      //             [+arrCells[9],+arrCells[10],+arrCells[11]],
+      //             [+arrCells[12],+arrCells[13],+arrCells[14]],
+      //             [+arrCells[15],+arrCells[16],+arrCells[17]]
+      //             ]);
+
+
+      var res = [];
       if(document.getElementById('times').checked == true){
-          res = A.x(B);
+          res = multiplyMatrices(arrCellsA,arrCellsB);
       }else if(document.getElementById('plus').checked == true){
-        res = A.add(B);
-        console.log(typeof A.e(1,1));
+        res = addingMatrices(arrCellsA,arrCellsB);
+        console.log(res);
       }else if (document.getElementById('minus').checked == true){
-        res = A.subtract(B);
+        res = subMatrices(arrCellsA,arrCellsB);
       }else{
         console.log("select the given option");
       }
-      for(i = 1;i < row+1; i++){
-        for(j = 1;j < column+1; j++){
-          counts();
-          console.log("counts: " + inc);
-        arrCID[inc] =  document.getElementById("rR"+i+"C"+j).value = res.e(i,j);
-        console.log("C array content"+ arrCID[inc]);
-        }
-      }
-      // document.getElementById('rR1C1').value = res.e(1,1);
-      // document.getElementById('rR1C2').value = res.e(1,2);
-      // document.getElementById('rR1C3').value = res.e(1,3);
-      // document.getElementById('rR2C1').value = res.e(2,1);
-      // document.getElementById('rR2C2').value = res.e(2,2);
-      // document.getElementById('rR2C3').value = res.e(2,3);
-      // document.getElementById('rR3C1').value = res.e(3,1);
-      // document.getElementById('rR3C2').value = res.e(3,2);
-      // document.getElementById('rR3C3').value = res.e(3,3);
+for(i = 1; i < row+1;i++){
+  for(j = 1; j < column+1;j++){
+        document.getElementById("rR"+i+"C"+j).value = res[i-1][j-1];
+  }
 }
+}
+
+function multiplyMatrices(a, b) {
+var result = [];
+for (var i = 0; i < a.length; i++) {
+  result[i] = [];
+  for (var j = 0; j < b[0].length; j++) {
+    var sum = 0;
+    for (var k = 0; k < a[0].length; k++) {
+      sum += a[i][k] * b[k][j];
+    }
+    result[i][j] = sum;
+  }
+}
+return result;
+}
+
+function addingMatrices(a,b){
+  var result = [];
+  for (var i = 0; i < a.length; i++) {
+    result[i] = [];
+    for (var j = 0; j < a[0].length; j++) {
+      result[i][j] = a[i][j] + b[i][j];
+    }
+  }
+
+  return result;
+}
+
+function subMatrices(a,b){
+  var result = [];
+  for (var i = 0; i < a.length; i++) {
+    result[i] = [];
+    for (var j = 0; j < a[0].length; j++) {
+      result[i][j] = a[i][j] - b[i][j];
+    }
+  }
+
+  return result;
+}
+
 
 function createFeild(){
   if((document.getElementById('Matrix_a').children.length == 0)){
@@ -114,8 +158,7 @@ function createFeild(){
       //creating field for matrices C
       const matrixC = document.createElement("INPUT");
       matrixC.setAttribute("type","text");
-      counts();
-      matrixC.setAttribute("value",arrCID[inc]);
+      matrixC.setAttribute("value", 0);
       matrixC.setAttribute("id","rR"+i+"C"+j);
       matrixC.setAttribute("class", "inputC");
       document.getElementById('Matrix_c').appendChild(matrixC);

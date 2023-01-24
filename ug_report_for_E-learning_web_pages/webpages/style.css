@@ -1,23 +1,19 @@
 body{
   width: auto;
   text-align: center;
-  overflow: hidden;
+  overflow: scroll;
+  padding-bottom: 800px;
 }
 .container{
-  width: 100%;
+  width: 1000px;
   border: 1px solid #BFBFBF;
   background-color: #f7f7f2;
   box-shadow: 10px 5px 4px #aaaaaa;
   position: absolute;
-width: fit-content;
-height: fit-content;
-left:0;
-top:12%;
-
+  margin-left: 15%;
 }
 .matrix{
   display: block;
-    border: 1px solid black;
 
 }
 
@@ -42,6 +38,6 @@ top:12%;
 /* radio buttons */
 
 #radio_buttons{
-  margin-top: 85px;
+  margin-top: 50px;
 /* border: 1px solid black; */
 }
