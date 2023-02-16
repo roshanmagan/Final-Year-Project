@@ -1,0 +1,29 @@
+[ 20/11/10 10:23:48pm ::1 ] this <strong> jhon.bob.com</strong> is not valid!</br>please enter a valid email!
+[ 20/11/10 10:24:25pm ::1 ] your password is too weak!!</br>please enter a stronger password, length of more than 5
+[ 20/11/10 10:25:15pm ::1 ] Your two password dosen't match!!
+[ 20/11/10 10:26:33pm ::1 ] your password is too weak!!</br>please enter a stronger password, length of more than 5
+[ 20/11/10 10:26:52pm ::1 ] password is wrong
+[ 20/11/10 10:27:10pm ::1 ] This email is not register with us!!
+[ 20/11/10 10:27:24pm ::1 ] This email is not register with us!!
+[ 24/03/20 07:41:35pm ::1 ] this <strong> roshanmagan.com</strong> is not valid!</br>please enter a valid email!
+[ 24/03/20 07:43:58pm ::1 ] this <strong> roshanmagan.com</strong> is not valid!</br>please enter a valid email!
+[ 24/03/20 07:44:48pm ::1 ] this <strong> roshanmagan.com</strong> is not valid!</br>please enter a valid email!
+[ 24/03/20 07:55:01pm ::1 ] please fill in the fields
+[ 24/03/20 08:05:49pm ::1 ] your password is too weak!!</br>please enter a stronger password, length of more than 5
+[ 24/03/20 08:24:28pm ::1 ] This user is already exist.
+[ 24/03/20 08:38:55pm ::1 ] Feilds can't be empty!<br/>Please fill in the username and password to log in!
+[ 24/03/20 09:40:39pm ::1 ] This email is not register with us!!
+[ 24/03/20 09:47:03pm ::1 ] password is wrong
+[ 24/03/20 09:48:08pm ::1 ] This email is not register with us!!
+[ 24/03/20 10:12:13pm ::1 ] password is wrong
+[ 20/11/10 10:00:17pm 192.168.0.8 ] Feilds can't be empty!<br/>Please fill in the username and password to log in!
+27/01/23 01:25:32pm ::1 Database fail to select: Unknown database 'loginsystem'
+27/01/23 01:25:45pm ::1 Database fail to select: Unknown database 'loginsystem'
+27/01/23 01:26:32pm ::1 Database fail to select: Unknown database 'loginsystem'
+27/01/23 01:26:36pm ::1 Database fail to select: Unknown database 'loginsystem'
+27/01/23 01:26:38pm ::1 Database fail to select: Unknown database 'loginsystem'
+27/01/23 01:26:43pm ::1 Database fail to select: Unknown database 'loginsystem'
+[ 27/01/23 01:29:26pm ::1 ] This email is not register with us!!
+[ 27/01/23 09:12:27pm ::1 ] Feilds can't be empty!<br/>Please fill in the username and password to log in!
+[ 27/01/23 10:20:42pm ::1 ] Feilds can't be empty!<br/>Please fill in the username and password to log in!
+[ 01/02/23 10:58:31pm ::1 ] Feilds can't be empty!<br/>Please fill in the username and password to log in!

@@ -1,0 +1,130 @@
+190916 14:40:43 [Note] Event Scheduler: Loaded 0 events
+190916 14:40:43 [Note] Z:\unit - 27\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+191003 13:41:03 [Note] Event Scheduler: Loaded 0 events
+191003 13:41:03 [Note] Z:\year 2\unit - 27\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+191016 10:10:56 [Note] Event Scheduler: Loaded 0 events
+191016 10:10:56 [Note] Z:\year 2\unit - 27\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+200120 14:14:17 [Note] Event Scheduler: Loaded 0 events
+200120 14:14:17 [Note] E:\unit 27\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+200120 15:44:42 [Note] Event Scheduler: Loaded 0 events
+200120 15:44:42 [Note] E:\unit 27\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+200210 14:46:15 [Note] Event Scheduler: Loaded 0 events
+200210 14:46:15 [Note] E:\unit 27\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+200324 18:26:45 [Note] Event Scheduler: Loaded 0 events
+200324 18:26:45 [Note] D:\Roshan-Magan-40125435-A2\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+230127 12:15:53 [Note] Event Scheduler: Loaded 0 events
+230127 12:15:53 [Note] E:\Roshan-Magan-U27-A2\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+230127 12:16:17 [Note] Event Scheduler: Loaded 0 events
+230127 12:16:17 [Note] E:\Roshan-Magan-U27-A2\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+230127 12:20:03 [Note] Event Scheduler: Loaded 0 events
+230127 12:20:03 [Note] E:\Roshan-Magan-U27-A2\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+230127 12:20:21 [Note] Event Scheduler: Loaded 0 events
+230127 12:20:21 [Note] E:\Roshan-Magan-U27-A2\USBWebserver v8.5\8.5/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3307  MySQL Community Server (GPL)
+230127 13:28:18 [Note] Event Scheduler: Loaded 0 events
+230127 13:28:18 [Note] D:\year3\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3306  MySQL Community Server (GPL)
+230127 21:04:58 [Note] Event Scheduler: Loaded 0 events
+230127 21:04:58 [Note] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3306  MySQL Community Server (GPL)
+230127 21:21:54 [ERROR] Cannot find or open table customers/users_table from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:55 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\mysql\innodb_index_stats.frm'
+230127 21:21:55 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\mysql\innodb_table_stats.frm'
+230127 21:21:55 [ERROR] Cannot find or open table mysql/slave_master_info from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:55 [ERROR] Cannot find or open table mysql/slave_relay_log_info from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:55 [ERROR] Cannot find or open table mysql/slave_worker_info from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:55 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\performance_schema\events_statements_summary_by_digest.frm'
+230127 21:21:55 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\performance_schema\host_cache.frm'
+230127 21:21:58 [ERROR] Cannot find or open table customers/users_table from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:58 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\mysql\innodb_index_stats.frm'
+230127 21:21:58 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\mysql\innodb_table_stats.frm'
+230127 21:21:58 [ERROR] Cannot find or open table mysql/slave_master_info from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:58 [ERROR] Cannot find or open table mysql/slave_relay_log_info from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:58 [ERROR] Cannot find or open table mysql/slave_worker_info from
+the internal data dictionary of InnoDB though the .frm file for the
+table exists. Maybe you have deleted and recreated InnoDB data
+files but have forgotten to delete the corresponding .frm files
+of InnoDB tables, or you have moved .frm files to another database?
+or, the table contains indexes that this version of the engine
+doesn't support.
+See http://dev.mysql.com/doc/refman/5.5/en/innodb-troubleshooting.html
+how you can resolve the problem.
+
+230127 21:21:58 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\performance_schema\events_statements_summary_by_digest.frm'
+230127 21:21:58 [ERROR] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: Incorrect information in file: '.\performance_schema\host_cache.frm'
+230207  0:34:23 [Note] Event Scheduler: Loaded 0 events
+230207  0:34:23 [Note] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3306  MySQL Community Server (GPL)

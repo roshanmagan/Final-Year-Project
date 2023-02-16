@@ -1,0 +1,76 @@
+
+/*Style sheet for whole multi user login system*/
+
+/*styling the body tag*/
+body
+{
+	
+	width: 360px; 
+	margin: 0 auto;
+}
+
+/*styling form tag*/
+form
+{	
+	
+	text-shadow: 1px 1px #D0D0D0; /*giving a shadow to the text*/
+	font-family: arial verdana, sans-serif;
+	margin: 0 auto; /*setting form into the middle of the page*/
+	padding: 30px;
+	width: 300px;
+	background-color: #F8F8F8; /*light grey*/
+	
+}
+
+/*styling the input feilds*/
+form input
+{
+	width: 300px;
+	height: 30px;
+	border: 1px solid green;
+}
+
+/*giving the red color to all the error messages*/
+.error
+{
+	color: red;
+}
+
+/*giving the styling to the heading of the page*/
+h1
+{
+	text-align : center;
+	border-bottom: 6px #808080;
+	border: 1px solid black;
+	background-color: black;
+	color: white;
+	
+}
+
+/*styling for all the buttons*/
+.btn
+{
+	width: 100px;
+	border: 1px solid black;
+	text-decoration: none;
+	color: white;
+	background-color: #383838;
+	padding: 3px;
+	border-radius: 5px;
+	text-shadow: 0px 0px;
+	font-size: 15px;
+
+}
+
+/*giving a green color to the success messages*/
+.success
+{
+	color: #00E000;
+}
+
+/*button color when it hover*/
+.btn:hover
+{
+	background-color: grey;
+}
+
