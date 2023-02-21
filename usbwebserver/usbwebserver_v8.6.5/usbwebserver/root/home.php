@@ -16,7 +16,7 @@
 <body>
   <div class="navbar">
     <a href="home.php">Home</a>
-    <a href="#about">About</a>
+    <a href="about.php">About</a>
     <div class="dropdown">
       <button class="dropbtn">Pages
         <i class="fa fa-caret-down"></i>

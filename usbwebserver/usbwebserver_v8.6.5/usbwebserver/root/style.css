@@ -1,7 +1,7 @@
 body{
   width: auto;
   text-align: center;
-  padding-bottom: 800px;
+  border: 1px solid black;
 }
 .container{
   border: 1px solid #BFBFBF;
@@ -13,10 +13,12 @@ body{
 
 }
 
-h2{
+h1,h2{
   background-color: #aaaaaa;
 }
-
+.multi-box{
+  border: 1px solid black; 
+}
 .A{
   display: inline;
 }
@@ -25,6 +27,10 @@ h2{
 
 }
 #test-questions {
+  border: 1px solid black;
+}
+
+#myCanvas{
   border: 1px solid black;
 }
 /*
@@ -59,8 +65,6 @@ justify-content: center;
   border-right: black solid;
 }
 
-
-
 td {
   width: 30px;
   height: 30px;
@@ -68,8 +72,11 @@ td {
   text-align: center;
 }
 
-#result-out:nth-child(odd):nth-child(1) {
-  background-color: aqua;
+.result-out p:nth-child(odd):nth-child(1) {
+  width: 35%;
+  margin-left: 32.4%;
+  animation-name: highlight-result;
+  animation-duration: 2s;
 }
 
 .table-a tr:nth-child(odd):nth-child(1){
@@ -100,4 +107,11 @@ td {
   100%{background-color: rgb(255, 0, 255);}
 }
 
+@keyframes highlight-result {
+  0%{background-color: transparent}
+  100%{background-color: rgb(255, 0, 255);}
+}
 
+.animate {
+  animation-play-state: running;
+}

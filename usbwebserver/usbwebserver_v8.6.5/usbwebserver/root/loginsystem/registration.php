@@ -15,7 +15,8 @@ Registration Page
 <h1>User Registration Form</h1><!--heading of the page-->
 <!--registration form for the user-->
 <form method="post" action="registration.php" name="rgtn_page"><!--opening form tag-->
-<a class="btn" href="/index.php">Log-in</a><!--link to go to login page--><br /><br />
+<a class="btn" href="/index.php">Log-in</a><!--link to go to login page-->
+<a class="btn" href="index.html">Home</a><br /><br /><!--link to go to home page-->
 
 First Name<input type="text" name="fn" ></input><br/><br/><!--input feild for the taking first name-->
 Last Name<input type="text" name="ln" ></input><br/><br/><!--input feild for the taking last name-->
@@ -27,26 +28,25 @@ Confirm Password<input type="password" name="cfmpass" ></input><br/><br/><!--inp
 
 <p class="error"><!--p tag for styling purpose error messages-->
 <?php
+// $stat_file = "text_files/regi_stat.txt";//this is for storing the error log text file location
+// $f_open = fopen($stat_file,"w") or die("unable to open a file!");// opens a error log text file for writing a file
 
-$stat_file = "text_files/regi_stat.txt";//this is for storing the error log text file location
-$f_open = fopen($stat_file,"w") or die("unable to open a file!");// opens a error log text file for writing a file
-
-//session for hit counter
-if(isset($_SESSION['registration']))//checking if the registartion session is set or not
-{
+// //session for hit counter
+// if(isset($_SESSION['registration']))//checking if the registartion session is set or not
+// {
 	
-	$_SESSION['registration'] = $_SESSION['registration'] + 1;// here session is set and increment by 1 when the user visits this page
-	$regi_stat_count = "Registration Page: ".$_SESSION['registration']; //storing the hit counter digit and message in the local variable
-	fwrite($f_open,$regi_stat_count);  // writing the hit counter message into the text file
-	fclose($f_open);// closing the text file
+// 	$_SESSION['registration'] = $_SESSION['registration'] + 1;// here session is set and increment by 1 when the user visits this page
+// 	$regi_stat_count = "Registration Page: ".$_SESSION['registration']; //storing the hit counter digit and message in the local variable
+// 	fwrite($f_open,$regi_stat_count);  // writing the hit counter message into the text file
+// 	fclose($f_open);// closing the text file
 	
-}else
-{
-	$_SESSION['registration'] = 1; // this is to set the login session hit counter by one so, when user enters into the page it won't give 'undefined index error'
-	$regi_stat_count = "Registration Page: ".$_SESSION['registration'];//storing the hit counter digit and message in the local variable
-	fwrite($f_open,$regi_stat_count);// writing the hit counter message into the text file 
-	fclose($f_open);// closing the text file
-}
+// }else
+// {
+// 	$_SESSION['registration'] = 1; // this is to set the login session hit counter by one so, when user enters into the page it won't give 'undefined index error'
+// 	$regi_stat_count = "Registration Page: ".$_SESSION['registration'];//storing the hit counter digit and message in the local variable
+// 	fwrite($f_open,$regi_stat_count);// writing the hit counter message into the text file 
+// 	fclose($f_open);// closing the text file
+// }
 
 
 
@@ -57,7 +57,7 @@ if(isset($_POST['submit']))
 	$date = date("d/m/y"); //storing a date into the variable for error log
 	$time = date("h:i:sa"); // storing time into the variable for error log
 	$ip = $_SERVER['REMOTE_ADDR'];// this is to store the ip address of the current user
-	$errorFile = "text_files/error_log.txt"; // this is to store the error log text file location
+	$errorFile = "/text_files/error_log.txt"; // this is to store the error log text file location
 	$err_message = ""; // assigning an error message variable to store error messages to write the errors in the error log file
 	
 	//including database connection file to make a connection with the database
@@ -104,7 +104,7 @@ if(isset($_POST['submit']))
 		{
 			echo $pass_len_err = "your password is too weak!!" ."</br>". "please enter a stronger password, length of more than 5"."\r\n"; // giving an error message if the password length is less than 5
 			$err_message = "[ ".$date." ".$time." ".$ip." "."] ".$pass_len_err;//error message is store in the varibale with the date, ip and time for error log
-			$f_open = fopen($errorFile,"a+") or die("4unable to open a file!");//error log text file is open
+			$f_open = fopen($errorFile,"a+") or die("unable to open a file!");//error log text file is open
 			fwrite($f_open,$err_message);// writing error log file with error message
 			fclose($f_open);// closing the error log file
 			exit();// exiting the script so, no futher script is excuted
@@ -159,7 +159,7 @@ if(isset($_POST['submit']))
 						// this will create a session success message which will be display when the user succefully register and redirected to the log in page
 						$_SESSION['success'] = $userName." Registration sucessfully! please log in to visit members page!";
 						// user wil be redirected to the login page if the user is succefully register
-						header('Location: index.php');
+						header('Location: /index.php');
 						
 					}
 					

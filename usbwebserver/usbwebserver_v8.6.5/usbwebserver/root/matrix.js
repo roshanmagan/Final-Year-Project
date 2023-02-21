@@ -9,6 +9,11 @@ var count = 0;
 var inc = 0;
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
+var matrix = [];
+ctx.font = "20px Comic Sans MS";
+ctx.textAlign = "center";
+ctx.textBaseline = "middle";
+
 
 function increament(){
   count+=1;
@@ -34,18 +39,17 @@ function mCalculation(){
   let arrCellsB = [];
   console.log(arrIDA);
  // createFeild_C();
-for (var i = 0; i < row; i++) {
-    arrCellsA[i] = [];
-    arrCellsB[i] = [];
-    for (var j = 0; j < column; j++) {
-      arrCellsA[i][j] = parseInt(document.getElementById(arrIDA[i][j]).value);
-      arrCellsB[i][j] = parseInt(document.getElementById(arrIDB[i][j]).value);
-      console.log("arr A: "+arrCellsA[i]);
-      console.log("arr B: "+arrCellsB[i]);
+  for (var i = 0; i < row; i++) {
+      arrCellsA[i] = [];
+      arrCellsB[i] = [];
+      for (var j = 0; j < column; j++) {
+        arrCellsA[i][j] = parseInt(document.getElementById(arrIDA[i][j]).value);
+        arrCellsB[i][j] = parseInt(document.getElementById(arrIDB[i][j]).value);
+        console.log("arr A: "+arrCellsA[i]);
+        console.log("arr B: "+arrCellsB[i]);
+      }
+      
     }
-  }
-
-
       // var A = $M([
       //             [+arrCells[0],+arrCells[1],+arrCells[2]],
       //             [+arrCells[3],+arrCells[4],+arrCells[5]],
@@ -56,25 +60,63 @@ for (var i = 0; i < row; i++) {
       //             [+arrCells[12],+arrCells[13],+arrCells[14]],
       //             [+arrCells[15],+arrCells[16],+arrCells[17]]
       //             ]);
-
-
+    
+      
       var res = [];
+      var text = "Matrix A                                 Matrix B";
+      var text2 = "Matrix C";
       if(document.getElementById('times').checked == true){
           res = multiplyMatrices(arrCellsA,arrCellsB);
           console.log(res);
+          matrix = res;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = "black";
+          ctx.fillText(text,240,10);
+          ctx.fillText("x",240,130);
+          displayMatrices(arrCellsA,0,50);
+          displayMatrices(arrCellsB,300,0);
+          ctx.translate(-300,-50);
+          ctx.fillStyle = "blue";
+          ctx.fillText(text2,110,260);
+          displayMatrices(matrix,0,300);
+          ctx.translate(0,-300);
       }else if(document.getElementById('plus').checked == true){
         res = addingMatrices(arrCellsA,arrCellsB);
         console.log(res);
+        matrix = res;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "black";
+        ctx.fillText(text,240,10);
+        ctx.fillText("+",240,130);
+        displayMatrices(arrCellsA,0,50);
+        displayMatrices(arrCellsB,300,0);
+        ctx.translate(-300,-50);
+        ctx.fillStyle = "blue";
+        ctx.fillText(text2,110,260);
+        displayMatrices(matrix,0,300);
+        ctx.translate(0,-300);
       }else if (document.getElementById('minus').checked == true){
         res = subMatrices(arrCellsA,arrCellsB);
+        matrix = res;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "black";
+        ctx.fillText(text,240,10);
+        ctx.fillText("-",240,130);
+        displayMatrices(arrCellsA,0,50);
+        displayMatrices(arrCellsB,300,0);
+        ctx.translate(-300,-50);
+        ctx.fillStyle = "blue";
+        ctx.fillText(text2,110,260);
+        displayMatrices(matrix,0,300);
+        ctx.translate(0,-300);
       }else{
         console.log("select the given option");
       }
-for(i = 1; i < row+1;i++){
-  for(j = 1; j < column+1;j++){
-        document.getElementById("rR"+i+"C"+j).value = res[i-1][j-1];
+  for(i = 1; i < row+1;i++){
+    for(j = 1; j < column+1;j++){
+          document.getElementById("rR"+i+"C"+j).value = res[i-1][j-1];
+    }
   }
-}
 }
 
 function multiplyMatrices(a, b) {
@@ -85,10 +127,6 @@ for (var i = 0; i < a.length; i++) {
     var sum = 0;
     for (var k = 0; k < a[0].length; k++) {
       sum += a[i][k] * b[k][j];
-      ctx.font = "30px Comic Sans MS";
-      ctx.fillStyle = "red";
-      ctx.textAlign = "center";
-      ctx.fillText(a[i][k], canvas.width/2, canvas.height/2);
     }
     result[i][j] = sum;
   }
@@ -143,7 +181,6 @@ function createFeild(){
         br.setAttribute("class","brIDA");
         divAID.appendChild(br);
       }
-
       //creating field for matrices B
       const matrixB = document.createElement("INPUT");
       matrixB.setAttribute("type","text");
@@ -218,3 +255,43 @@ function clearFeild(inputFeild,brElement){
 
   console.log(document.getElementById('Matrix_a').children.length);
 }
+
+function displayMatrices(matrix,x_axies,y_axies){
+  // Define the matrix
+
+
+// Set the font and text alignment
+
+// Define the size of each cell and the size of the brackets
+var cellSize = 60;
+var bracketSize = 10;
+
+ctx.translate(x_axies,y_axies);
+// Draw the left bracket
+ctx.beginPath();
+ctx.moveTo(0, 0);
+ctx.lineTo(bracketSize, 0);
+ctx.lineTo(bracketSize, matrix.length * cellSize);
+ctx.lineTo(0, matrix.length * cellSize);
+ctx.closePath();
+ctx.stroke();
+
+// Draw the right bracket
+ctx.beginPath();
+ctx.moveTo(matrix[0].length * cellSize, 0);
+ctx.lineTo(matrix[0].length * cellSize - bracketSize, 0);
+ctx.lineTo(matrix[0].length * cellSize - bracketSize, matrix.length * cellSize);
+ctx.lineTo(matrix[0].length * cellSize, matrix.length * cellSize);
+ctx.closePath();
+ctx.stroke();
+
+// Loop through the matrix and draw each cell
+for (var i = 0; i < matrix.length; i++) {
+  for (var j = 0; j < matrix[i].length; j++) {
+    var x = j * cellSize + cellSize / 2;
+    var y = i * cellSize + cellSize / 2;
+    ctx.fillText(matrix[i][j], x, y);
+  }
+}
+}
+
