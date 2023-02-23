@@ -1,9 +1,9 @@
 <?php
 //this for staring the session so, sessions can be use on this page
+ob_start();
 session_start();
 ?>
-<html> <!--opening of html page-->
-
+<!DOCTYPE html> <!--opening of html page-->
 	<head><!--opening of head-->
 		<!--this the title of the page -->
 		<title>Log in system</title>
@@ -140,7 +140,9 @@ session_start();
 				
 				//sets the session for the user to access the memebers page
 				$_SESSION['name'] = $email;
+
 				header('Location: home.php'); // this will redirect the user to members page
+				   ob_end_flush();
 				} else
 				{
 					echo $email_pass_err = "User email and passwords are incorrect"."\r\n"; // error message will be display if the user's password and email didn't match with the database password and email

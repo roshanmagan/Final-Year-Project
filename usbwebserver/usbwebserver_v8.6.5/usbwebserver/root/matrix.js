@@ -37,7 +37,7 @@ function mCalculation(){
                 ["bR6C1","bR6C2","bR6C3","bR6C4","bR6C5","bR6C6"]];
   let arrCellsA = [];
   let arrCellsB = [];
-  console.log(arrIDA);
+//   console.log(arrIDA);
  // createFeild_C();
   for (var i = 0; i < row; i++) {
       arrCellsA[i] = [];
@@ -45,8 +45,8 @@ function mCalculation(){
       for (var j = 0; j < column; j++) {
         arrCellsA[i][j] = parseInt(document.getElementById(arrIDA[i][j]).value);
         arrCellsB[i][j] = parseInt(document.getElementById(arrIDB[i][j]).value);
-        console.log("arr A: "+arrCellsA[i]);
-        console.log("arr B: "+arrCellsB[i]);
+        // console.log("arr A: "+arrCellsA[i]);
+        // console.log("arr B: "+arrCellsB[i]);
       }
       
     }
@@ -67,7 +67,7 @@ function mCalculation(){
       var text2 = "Matrix C";
       if(document.getElementById('times').checked == true){
           res = multiplyMatrices(arrCellsA,arrCellsB);
-          console.log(res);
+        //   console.log(res);
           matrix = res;
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = "black";
@@ -82,7 +82,7 @@ function mCalculation(){
           ctx.translate(0,-300);
       }else if(document.getElementById('plus').checked == true){
         res = addingMatrices(arrCellsA,arrCellsB);
-        console.log(res);
+        // console.log(res);
         matrix = res;
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = "black";
@@ -110,7 +110,7 @@ function mCalculation(){
         displayMatrices(matrix,0,300);
         ctx.translate(0,-300);
       }else{
-        console.log("select the given option");
+        // console.log("select the given option");
       }
   for(i = 1; i < row+1;i++){
     for(j = 1; j < column+1;j++){
@@ -160,86 +160,81 @@ function subMatrices(a,b){
 
 
 function createFeild(){
-  if((document.getElementById('Matrix_a').children.length == 0)){
-
   row = parseInt(document.getElementById('rowSize').value);
   column = parseInt(document.getElementById('colSize').value);
-  for(i = 1;i < row+1; i++){
-    for(j = 1;j < column+1; j++){
-      //creating field for matrices A
-      const matrixA = document.createElement("INPUT");
-      matrixA.setAttribute("type","text");
-      increament();
-      matrixA.setAttribute("value",count);
-      matrixA.setAttribute("id","aR"+i+"C"+j);
-      matrixA.setAttribute("class", "inputA");
-      document.getElementById('Matrix_a').appendChild(matrixA);
-      console.log("checking");
-      if(j == sizeCheck){
-        var br = document.createElement('br');
-        var divAID = document.getElementById('Matrix_a');
-        br.setAttribute("class","brIDA");
-        divAID.appendChild(br);
-      }
-      //creating field for matrices B
-      const matrixB = document.createElement("INPUT");
-      matrixB.setAttribute("type","text");
-      matrixB.setAttribute("value",count);
-      matrixB.setAttribute("id","bR"+i+"C"+j);
-      matrixB.setAttribute("class", "inputB");
-      document.getElementById('Matrix_b').appendChild(matrixB);
+  if((document.getElementById('Matrix_a').children.length == 0) && (row <= 6) && (column <= 6)){
+    console.log(row);
+    console.log(column);
+      for(i = 1;i < row+1; i++){
+        for(j = 1;j < column+1; j++){
+            //creating field for matrices A
+            const matrixA = document.createElement("INPUT");
+            matrixA.setAttribute("type","text");
+            increament();
+            matrixA.setAttribute("value",count);
+            matrixA.setAttribute("id","aR"+i+"C"+j);
+            matrixA.setAttribute("class", "inputA");
+            document.getElementById('Matrix_a').appendChild(matrixA);
+          //   console.log("checking");
+            if(j == sizeCheck){
+              var br = document.createElement('br');
+              var divAID = document.getElementById('Matrix_a');
+              br.setAttribute("class","brIDA");
+              divAID.appendChild(br);
+            }
+            //creating field for matrices B
+            const matrixB = document.createElement("INPUT");
+            matrixB.setAttribute("type","text");
+            matrixB.setAttribute("value",count);
+            matrixB.setAttribute("id","bR"+i+"C"+j);
+            matrixB.setAttribute("class", "inputB");
+            document.getElementById('Matrix_b').appendChild(matrixB);
 
-      var sizeCheck = parseInt(row);
-      console.log(j);
-      console.log(sizeCheck);
-      if(j == sizeCheck){
-          console.log("inside: "+j);
-          var br = document.createElement('br');
-          var divBID = document.getElementById('Matrix_b');
-          br.setAttribute("class","brIDB");
-           divBID.appendChild(br);
-        console.log("its working");
-      }
+            var sizeCheck = parseInt(row);
+          //   console.log(j);
+          //   console.log(sizeCheck);
+            if(j == sizeCheck){
+              //   console.log("inside: "+j);
+                var br = document.createElement('br');
+                var divBID = document.getElementById('Matrix_b');
+                br.setAttribute("class","brIDB");
+                divBID.appendChild(br);
+              // console.log("its working");
+            }
 
-      //creating field for matrices C
-      const matrixC = document.createElement("INPUT");
-      matrixC.setAttribute("type","text");
-      matrixC.setAttribute("value", 0);
-      matrixC.setAttribute("id","rR"+i+"C"+j);
-      matrixC.setAttribute("class", "inputC");
-      document.getElementById('Matrix_c').appendChild(matrixC);
-      console.log("checking: "+count);
-      if(j == sizeCheck){
-        var br = document.createElement('br');
-        var divCID = document.getElementById('Matrix_c');
-        br.setAttribute("class","brIDC");
-        divCID.appendChild(br);
-      }
+              //creating field for matrices C
+              const matrixC = document.createElement("INPUT");
+              matrixC.setAttribute("type","text");
+              matrixC.setAttribute("value", 0);
+              matrixC.setAttribute("id","rR"+i+"C"+j);
+              matrixC.setAttribute("class", "inputC");
+              document.getElementById('Matrix_c').appendChild(matrixC);
+            //   console.log("checking: "+count);
+              if(j == sizeCheck){
+                var br = document.createElement('br');
+                var divCID = document.getElementById('Matrix_c');
+                br.setAttribute("class","brIDC");
+                divCID.appendChild(br);
+              }
 
-       var sizeCheck = parseInt(row);
-      // console.log(j);
-      // console.log(sizeCheck);
-      // if(j == sizeCheck){
-      //     console.log("inside: "+j);
-      //     var br = document.createElement('br');
-      //     var divCID = document.getElementById('Matrix_c');
-      //     br.setAttribute("class","brID");
-      //      divCID.appendChild(br);
-      //   console.log("its working");
-      // }
+              var sizeCheck = parseInt(row);
+        }
+      }
+    }else if (!(document.getElementById('Matrix_a').children.length == 0))
+    {
+        let inputFeild_A = document.querySelectorAll(".inputA");
+        let brA = document.querySelectorAll(".brIDA");
+        let inputFeild_B = document.querySelectorAll(".inputB");
+        let brB = document.querySelectorAll(".brIDB");
+        let inputFeild_C = document.querySelectorAll(".inputC");
+        let brC = document.querySelectorAll(".brIDA");
+        clearFeild(inputFeild_A,brA);
+        clearFeild(inputFeild_B,brB);
+        clearFeild(inputFeild_C,brC);
+    }else{
+        console.log("Dimensions of the matrices should be less than 6");
+        alert("Dimensions of the matrices should be less than 6");
     }
-  }
-}else if (!(document.getElementById('Matrix_a').children.length == 0)){
-  let inputFeild_A = document.querySelectorAll(".inputA");
-  let brA = document.querySelectorAll(".brIDA");
-  let inputFeild_B = document.querySelectorAll(".inputB");
-  let brB = document.querySelectorAll(".brIDB");
-  let inputFeild_C = document.querySelectorAll(".inputC");
-  let brC = document.querySelectorAll(".brIDA");
-clearFeild(inputFeild_A,brA);
-clearFeild(inputFeild_B,brB);
-clearFeild(inputFeild_C,brC);
-}
 
 }
 
@@ -253,7 +248,7 @@ function clearFeild(inputFeild,brElement){
   });
 
 
-  console.log(document.getElementById('Matrix_a').children.length);
+//   console.log(document.getElementById('Matrix_a').children.length);
 }
 
 function displayMatrices(matrix,x_axies,y_axies){
