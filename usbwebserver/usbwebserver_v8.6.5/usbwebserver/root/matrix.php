@@ -14,6 +14,7 @@
           <link rel="stylesheet" href="css/sidebar.css">
           <link rel="stylesheet" href="css/test-questions.css">
           <script type="text/javascript" src="javascript/navbar.js"></script>
+          <script src="javascript/inverse.js" type="module"></script>
           <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
       </script>
@@ -29,16 +30,17 @@
                     <div class="dropdown-list">
                       <a href="matrix.php">Matrices</a>
                       <a href="VR.php">Virtual Reality</a>
+                      <a href="tree-data-structure.php">Tree Algorithms</a>
                     </div>
                   </div> 
                 <a href="loginsystem/logout.php">logout</a>
           </div>
           <!-- Sidebar -->
           <div id="mySidenav" class="sidenav">
-              <a href="#">About</a>
-              <a href="#">Services</a>
-              <a href="#">Clients</a>
-              <a href="#">Contact</a>
+              <a href="#container-box">Matrix Info</a>
+              <a href="#questions">Quiz</a>
+              <a href="#container-matrix">Matrice Calculator</a>
+              <a href="about.php">About</a>
           </div>
         <div id="container-box">
             <div class="dif-matrices">
@@ -232,6 +234,7 @@
             </label>
           </div>
           <button type="submit" id="myBtn">Submit</button>
+
           <!-- The Modal -->
         <div id="myModal" class="modal">
 
@@ -247,12 +250,12 @@
 
           </div>
 
-            <div class="container">
+            <div class="container" id="container-matrix">
               <h2>Matrices Caculator</h2>
             <form class="Matrix_multi" action="index.html" method="post">
-              <input type="text" id="rowSize" value="3"/>
-              <input type="text" id="colSize" value="3"/>
-                <button type="button" name="button" onclick="createFeild()">+</button>
+              <input type="text" id="rowSize" value="4"/>
+              <input type="text" id="colSize" value="4"/>
+                <button id="create-f" type="button" name="button">+</button>
           <div class="matrix">
             <p class="A">Matrix a</p>
             <div id="Matrix_a">
@@ -304,10 +307,12 @@
               <label for="A+B">A + B</label><br>
               <input type="radio" id="minus" name="arth" value="sub">
               <label for="A-B">A - B</label>
+              <input type="radio" id="trans" name="arth" value="trans">
+              <label for="A-trans">A transpose</label>
             </div>
 
             <div id="M_result">
-              <input type="button" id="mButton" value="submit" />
+              <input type="button" id="mButton" value="submit"/>
             </div>
                   <br>
         <div class="matrices-out">
@@ -330,7 +335,7 @@
           </div>
           </form>
           </div>
-            <script type="text/javascript" src="matrix.js"></script>
+            <script type="module" src="matrix.js"></script>
             <script type="text/javascript" src="javascript/quiz.js"></script>
             <?php
             if(!isset($_SESSION['name'])) //this will redirect the user to login page if the user is not log in

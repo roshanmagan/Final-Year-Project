@@ -1,0 +1,64 @@
+/* .tree {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 50px;
+}
+.node {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: 1px solid black;
+	border-radius: 50%;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0 10px;
+}
+.arrow {
+	width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid black;
+	margin-top: -15px;
+}
+.level-0 {
+	margin-top: 0;
+}
+.level-1 {
+	margin-top: 50px;
+}
+.level-2 {
+	margin-top: 100px;
+} */
+
+.tree {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .node {
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+  }
+  
+  .node .value {
+	font-size: 24px;
+	font-weight: bold;
+	border: 1px solid black;
+	border-radius: 50%;
+  }
+  
+  .node .left,
+  .node .right {
+	margin-top: 10px;
+	display: flex;
+	justify-content: center;
+  }
+  

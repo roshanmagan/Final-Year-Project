@@ -1,6 +1,6 @@
 <?php
 //This variables are for database connection//
-$host = '192.168.0.57:3306'; //this is to store the host name  
+$host = '192.168.0.12:3306'; //this is to store the host name  
 $UserName = 'root'; //this is to store the username of the server
 $Password = '6Jh[r(CfAKw!FA1q'; // this is to store password of the server
 $dbName = 'loginsystem'; //this is to storing database name which I have create for this assignment

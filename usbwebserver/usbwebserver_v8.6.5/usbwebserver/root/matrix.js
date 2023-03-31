@@ -1,3 +1,5 @@
+ import * as inverse from '/javascript/inverse.js';
+
 window.onload = function(){
   var button = document.getElementById('mButton');
   button.addEventListener("click", mCalculation);
@@ -18,9 +20,11 @@ ctx.textBaseline = "middle";
 function increament(){
   count+=1;
 }
+let create_f = document.getElementById('create-f');
+
+create_f.addEventListener("click", createFeild);
 
 //for the matrices calculation output
-
 
 function mCalculation(){
   let arrIDA = [["aR1C1","aR1C2","aR1C3","aR1C4","aR1C5","aR1C6"],
@@ -72,14 +76,14 @@ function mCalculation(){
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = "black";
           ctx.fillText(text,240,10);
-          ctx.fillText("x",240,130);
+          ctx.fillText("x",270,130);
           displayMatrices(arrCellsA,0,50);
           displayMatrices(arrCellsB,300,0);
           ctx.translate(-300,-50);
           ctx.fillStyle = "blue";
-          ctx.fillText(text2,110,260);
-          displayMatrices(matrix,0,300);
-          ctx.translate(0,-300);
+          ctx.fillText(text2,110,360);
+          displayMatrices(matrix,0,400);
+          ctx.translate(0,-500);
       }else if(document.getElementById('plus').checked == true){
         res = addingMatrices(arrCellsA,arrCellsB);
         // console.log(res);
@@ -109,8 +113,9 @@ function mCalculation(){
         ctx.fillText(text2,110,260);
         displayMatrices(matrix,0,300);
         ctx.translate(0,-300);
-      }else{
-        // console.log("select the given option");
+      }else if(document.getElementById('trans').checked == true){
+        res = inverse.matrice_transpose(arrCellsA);
+        console.log("select the given option");
       }
   for(i = 1; i < row+1;i++){
     for(j = 1; j < column+1;j++){
@@ -157,6 +162,26 @@ function subMatrices(a,b){
 
   return result;
 }
+// function matrice_transpose(matrice) {
+//   // Get the number of rows and columns in the matrix
+//   const rows = matrice.length;
+//   const cols = matrice[0].length;
+
+//   // Create a new matrix to hold the transpose
+//   const transpose = new Array(cols);
+//   for (let i = 0; i < cols; i++) {
+//     transpose[i] = new Array(rows);
+//   }
+
+//   // Compute the transpose of the matrix
+//   for (let i = 0; i < rows; i++) {
+//     for (let j = 0; j < cols; j++) {
+//       transpose[j][i] = matrice[i][j];
+//     }
+//   }
+//   console.log
+//   return transpose;
+// }
 
 
 function createFeild(){
@@ -165,6 +190,8 @@ function createFeild(){
   if((document.getElementById('Matrix_a').children.length == 0) && (row <= 6) && (column <= 6)){
     console.log(row);
     console.log(column);
+    var i = 0;
+    var j =0;
       for(i = 1;i < row+1; i++){
         for(j = 1;j < column+1; j++){
             //creating field for matrices A
@@ -289,4 +316,3 @@ for (var i = 0; i < matrix.length; i++) {
   }
 }
 }
-

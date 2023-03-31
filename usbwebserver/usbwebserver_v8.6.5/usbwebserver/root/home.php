@@ -26,6 +26,7 @@
       <div class="dropdown-list">
         <a href="matrix.php">Matrices</a>
         <a href="VR.php">Virtual Reality</a>
+		<a href="tree-data-structure.php">Tree Algorithms</a>
       </div>
     </div> 
     <a href="loginsystem/logout.php">logout</a>
@@ -52,6 +53,16 @@
 	<div class="card">
 		<a class="button-a" href="VR.php">
 			<img src="img/vr-banner.png" alt="Avatar" style="width:100%">
+		</a>
+	<div class="container">
+		<h4><b>Virtual reality</b></h4> 
+		<p>Virtual Reality related topics</p> 
+	</div>
+	</div>
+
+	<div class="card">
+		<a class="button-a" href="tree-data-structure.php">
+			<img src="img/tree-banner.png" alt="Avatar" style="width:100%">
 		</a>
 	<div class="container">
 		<h4><b>Virtual reality</b></h4> 
@@ -99,9 +110,9 @@
 					fwrite($f_open,$members_stat_count);// writing the hit counter message into the text file 
 					fclose($f_open); // closing the text file
 				}
-				echo "<div class='username-txt'><p>"."Hello ". $_SESSION['name']."</p>
-				<p class='success'>".$success_msg."</p>
-				<a href = 'logout.php'>Logout</a></div>";	//displays the welcome message by displaying user's email address 
+				// echo "<div class='username-txt'><p>"."Hello ". $_SESSION['name']."</p>
+				// <p class='success'>".$success_msg."</p>
+				// <a href = 'logout.php'>Logout</a></div>";	//displays the welcome message by displaying user's email address 
 
 	} 
 ?>

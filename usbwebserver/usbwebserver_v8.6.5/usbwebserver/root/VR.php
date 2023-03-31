@@ -30,6 +30,7 @@
               <div class="dropdown-list">
                 <a href="matrix.php">Matrices</a>
                 <a href="VR.php">Virtual Reality</a>
+                <a href="tree-data-structure.php">Tree Algorithms</a>
               </div>
             </div> 
           <a href="loginsystem/logout.php">logout</a>
