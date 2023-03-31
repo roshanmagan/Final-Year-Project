@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/tree.css">
     <link rel="stylesheet" href="css/nav.css">
-    <link rel="stylesheet" href="css/vr.css">
     <link rel="stylesheet" href="css/sidebar.css">
   </head>
   <body>
@@ -34,7 +33,7 @@
           <a href="loginsystem/logout.php">logout</a>
         </div>
                   <!-- Sidebar -->
-                  <div id="mySidenav" class="sidenav">
+          <div id="mySidenav" class="sidenav">
               <a href="#">About</a>
               <a href="#">Services</a>
               <a href="#">Clients</a>
@@ -42,24 +41,10 @@
           </div>
   <div id="container">
     <h1>Tree Data Structures</h1>
-	<title>Binary Tree</title>
-
 	<div class="tree">
-		<!-- <div class="node level-0">10</div>
-		<div class="arrow"></div>
-		<div class="node level-1">5</div>
-		<div class="arrow"></div>
-		<div class="node level-1">15</div>
-		<div class="arrow"></div>
-		<div class="node level-2">2</div>
-		<div class="arrow"></div>
-		<div class="node level-2">7</div>
-		<div class="arrow"></div>
-		<div class="node level-2">12</div>
-		<div class="arrow"></div>
-		<div class="node level-2">18</div> -->
+    <canvas id="canvas" width="800" height="1000"></canvas>
+    <script src="javascript/binarytree.js"></script>
 	</div>
-<script src="javascript/binarytree.js"></script>
   </div>
     <?php
         if(!isset($_SESSION['name'])) //this will redirect the user to login page if the user is not log in

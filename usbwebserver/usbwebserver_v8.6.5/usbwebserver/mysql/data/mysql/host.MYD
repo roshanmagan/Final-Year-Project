@@ -128,3 +128,6 @@ how you can resolve the problem.
 230207  0:34:23 [Note] Event Scheduler: Loaded 0 events
 230207  0:34:23 [Note] D:\github\Final-Year-Project-1\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
 Version: '5.5.20'  socket: ''  port: 3306  MySQL Community Server (GPL)
+230331 17:16:51 [Note] Event Scheduler: Loaded 0 events
+230331 17:16:51 [Note] D:\github\Final-Year-Project\usbwebserver\usbwebserver_v8.6.5\usbwebserver/mysql/bin/mysqld_usbwv8.exe: ready for connections.
+Version: '5.5.20'  socket: ''  port: 3306  MySQL Community Server (GPL)
