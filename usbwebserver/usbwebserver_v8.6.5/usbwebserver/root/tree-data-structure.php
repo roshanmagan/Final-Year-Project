@@ -43,6 +43,20 @@
     <h1>Tree Data Structures</h1>
 	<div class="tree">
     <canvas id="canvas" width="800" height="1000"></canvas>
+
+    <h1>Binary Search Tree</h1>
+    <form>
+      <label for="insert-value">Insert value:</label>
+      <input type="text" id="insert-value" />
+      <button type="submit">Insert</button>
+    </form>
+    <form>
+      <label for="find-value">Find value:</label>
+      <input type="text" id="find-value" />
+      <button type="submit">Find</button>
+      <button type="button" id="remove-value">Remove</button>
+    </form>
+    <div class="output"></div>
     <script src="javascript/binarytree.js"></script>
 	</div>
   </div>

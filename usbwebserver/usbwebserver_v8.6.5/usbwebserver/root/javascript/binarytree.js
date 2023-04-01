@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+let foundNode = 0;
 class Node {
   constructor(value) {
     this.value = value;
@@ -15,6 +16,8 @@ class BinaryTree {
     this.verticalSpacing = 30; // vertical distance between two levels of nodes
     this.horizontalSpacing = 200; // horizontal distance between two nodes
   }
+
+
 
   add(value) {
     const node = new Node(value);
@@ -41,6 +44,58 @@ class BinaryTree {
       }
     }
   }
+
+  find(value) {
+    if (this.root === null) return false;
+
+    let current = this.root;
+    let found = false;
+
+    while (current && !found) {
+      if (value < current.value) {
+        current = current.left;
+      } else if (value > current.value) {
+        current = current.right;
+      } else {
+        found = true;
+        foundNode = value;
+      }
+    }
+
+    if (!found) return false;
+    return current;
+  }
+
+  remove(value) {
+    const removeNode = (node, value) => {
+      if (node === null) return null;
+
+      if (value === node.value) {
+        if (node.left === null && node.right === null) return null;
+        if (node.left === null) return node.right;
+        if (node.right === null) return node.left;
+
+        let tempNode = node.right;
+        while (tempNode.left !== null) {
+          tempNode = tempNode.left;
+        }
+
+        node.value = tempNode.value;
+        node.right = removeNode(node.right, tempNode.value);
+        return node;
+      } else if (value < node.value) {
+        node.left = removeNode(node.left, value);
+        return node;
+      } else {
+        node.right = removeNode(node.right, value);
+        return node;
+      }
+    };
+
+    this.root = removeNode(this.root, value);
+    return this;
+  }
+
 
   // Helper function to get the height of the tree
   getHeight(node) {
@@ -107,7 +162,13 @@ class BinaryTree {
     }
 
     // Draw the current node
-    const color = 'white';
+    let color = 'white';
+    if(foundNode == node.value){
+       color = 'red';
+    }else{
+       color = 'white';
+    }
+    
     this.drawCircle(x, nodeY, this.nodeRadius, color);
     this.drawText(x, nodeY, node.value.toString(), 'black');
   }
@@ -139,5 +200,62 @@ for (let i = 0; i< 7;i++){
 // tree.add(40);
 // tree.add(60);
 // tree.add(80);
+
+
+
+const output = document.querySelector('.output');
+
+document.forms[0].addEventListener('submit', function(event) {
+  event.preventDefault();
+  const value = parseInt(document.querySelector('#insert-value').value);
+  if(value){
+    foundNode = value;
+    tree.add(value);
+    tree.draw(canvas);
+    output.innerHTML = `Inserted ${value} into the tree`;
+  }else{
+    output.innerHTML = `${value} values are allowed`
+  }
+  
+  document.querySelector('#insert-value').value = '';
+});
+
+document.forms[1].addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const value = parseInt(document.querySelector('#find-value').value);
+  if(value){
+    const Findnode = tree.find(value);
+    tree.draw(canvas);
+    if (!Findnode) {
+      output.innerHTML = `${value} not found in the tree`;
+    } else {
+      output.innerHTML = `Found ${value} in the tree`;
+    }
+  }else{
+    output.innerHTML = `${value} values are allowed`
+  }
+
+  document.querySelector('#find-value').value = '';
+  
+});
+
+document.querySelector('#remove-value').addEventListener('click', function(event) {
+  const value = parseInt(document.querySelector('#find-value').value);
+  if(value){
+    const Findnode = tree.find(value);
+    if(Findnode){
+      tree.remove(value);
+      tree.draw(canvas);
+      output.innerHTML = `removed ${value} from the tree`;
+    }else{
+      output.innerHTML = `${value} not found in the tree`;
+    }
+ 
+ }else{
+  output.innerHTML = `${value} values are allowed`
+ }
+  document.querySelector('#find-value').value = '';
+});
 
 tree.draw(canvas);
