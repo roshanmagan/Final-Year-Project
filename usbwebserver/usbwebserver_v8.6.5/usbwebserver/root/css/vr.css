@@ -3,26 +3,95 @@
     text-align: center;
     margin-left: 25%;
     border: 1px solid black;
+    background:rgb(235, 229, 221);
 }
-
-canvas{
-    margin-left: 22%;
+body{
+    color: #060606;
+    text-align: center;
+}
+h1{
+	background: #aaaaaa;
+}
+#canvas-container{
     display: block;
+}
+canvas{
+    margin-left: 25%;
+    text-align: center;
+    display: none;
 }
 
 form{
-    width: 60%;
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    display: list-item;
+    text-align: -webkit-center;
 }
 .P-cordinates{
+    border-radius: 10%;
+    background: #F0F0F1;
+    border: 1px solid white;
     width: 20%;
-    position: relative;
-    top: 20%;
-    left: 20%;
 }
 .R-cordinates{
+    border-radius: 10%;
+    background: #F0F0F1;
+    border: 1px solid white;
     width: 20%;
-    position: relative;
-    left: 50%;
 }
+
+#r-x,#r-y,#r-z{
+    width: 20%;
+}
+
+#p-x,#p-y,#p-z{
+    width: 20%;
+}
+
+button {
+	align-items: center;
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: .25rem;
+	box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+	box-sizing: border-box;
+	color: rgba(0, 0, 0, 0.85);
+	cursor: pointer;
+	display: inline-flex;
+	font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	font-weight: 600;
+	justify-content: center;
+	line-height: 1.25;
+	margin: 0;
+	margin-top: 10px;
+	min-height: 3rem;
+	padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+	position: relative;
+	text-decoration: none;
+	transition: all 250ms;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	vertical-align: baseline;
+	width: auto;
+  }
+  
+	
+button:hover,
+button:focus {
+	border-color: rgba(0, 0, 0, 0.15);
+	box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+	color: rgba(0, 0, 0, 0.65);
+  }
+  
+button:hover {
+	transform: translateY(-1px);
+  }
+
+button:active {
+	background-color: #F0F0F1;
+	border-color: rgba(0, 0, 0, 0.15);
+	box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+	color: rgba(0, 0, 0, 0.65);
+	transform: translateY(0);
+  }

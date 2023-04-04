@@ -36,14 +36,14 @@
           <a href="loginsystem/logout.php">logout</a>
         </div>
                   <!-- Sidebar -->
-                  <div id="mySidenav" class="sidenav">
+              <div id="mySidenav" class="sidenav">
               <a href="#">About</a>
               <a href="#">Services</a>
               <a href="#">Clients</a>
               <a href="#">Contact</a>
           </div>
   <div id="container">
-  <h1>Virtuak Reality</h1>
+  <h1>Virtual Reality</h1>
     <p>Virtual reality (VR) is a computer-generated simulation of a three-dimensional image or environment that can be interacted with in a seemingly real or physical way by a person using special electronic equipment, such as a headset with sensors.
 
 VR technology has the potential to offer users a completely immersive experience that can transport them to another world or allow them to interact with digital objects as if they were real. The headset worn by the user typically contains sensors that track the movement of the user's head, as well as handheld controllers that track hand movements.</p>
@@ -71,15 +71,20 @@ Travel and Tourism: VR can be used to provide virtual tours of tourist destinati
 Overall, virtual reality has the potential to revolutionize the way we interact with digital environments and has numerous potential applications across a range of industries.
 </p>
   </div>
-  <script>
+    <button id="enter-ar-button">Enter demo</button>
+    <button id="hide-ar-button">Hide demo</button>
+    <script>
           // Initialize the Three.js library and create a 3D scene
       var scene = new THREE.Scene();
       var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
       var renderer = new THREE.WebGLRenderer({ antialias: true });
-      renderer.setSize(800, 500);
-      renderer.setClearColor(0x00f0f0, 1);
+      renderer.setSize(750, 400);
+      renderer.setClearColor(0x100d12, 1);
       renderer.xr.enabled = true;
+      renderer.shadowMap.enabled = true;
+      renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
       document.body.appendChild(renderer.domElement);
+
 
       //create a blue LineBasicMaterial
       const m = new THREE.LineBasicMaterial( { color: 0x0000ff } );
@@ -130,6 +135,7 @@ Overall, virtual reality has the potential to revolutionize the way we interact 
       rot_z = 0.00;
       updatePos();
       }
+
       function updatePos(){
           let pos_x_input = parseFloat(document.getElementById("p-x").value);
           let pos_y_input = parseFloat(document.getElementById("p-y").value);
@@ -150,17 +156,18 @@ Overall, virtual reality has the potential to revolutionize the way we interact 
       camera.position.z = 5;
 
       // Create a directional light
-      var light = new THREE.DirectionalLight(0x0000ff, 0.1);
+      var light = new THREE.DirectionalLight(0x0000ff, 1);
       // Set the position of the light
-      light.position.x = 2;
-      light.position.y = 3;
-      light.position.z = 4;
+      light.position.set(0,1,0);
+      // light.position.y = 3;
+      // light.position.z = 4;
+      light.castShadow = true; // default false
       // Add the light to the scene
       scene.add(light);
 
       renderer.setAnimationLoop( function () {
 
-      renderer.render( scene, camera );
+      renderer.render( scene, camera);
           cube.position.x = pos_x;
           cube.position.y = pos_y;
           cube.position.z = pos_z;
@@ -169,11 +176,23 @@ Overall, virtual reality has the potential to revolutionize the way we interact 
           cube.rotation.z += rot_z;
 
       } );
+      document.querySelector('#enter-ar-button').addEventListener('click', function(event) {
+        console.log("this is working");
+        document.getElementById("canvas-container").style.display = "block";
+        document.querySelector('canvas').style.display = "block";
+      });
+
+      document.querySelector('#hide-ar-button').addEventListener('click', function(event) {
+        console.log("this is working");
+        document.getElementById("canvas-container").style.display = "none";
+        document.querySelector('canvas').style.display = "none";
+      });
 
   </script>
-    <button id="enter-ar-button">Enter AR</button>
-    <div id="canvas-container"></div>
-    <form action="">
+    <br>
+    <br>
+    <div id="canvas-container">
+    <form>
     <section class="P-cordinates">
         <label for="p-x">X position:</label>
         <input type="number" id="p-x" name="px" value="0.00">
@@ -195,10 +214,12 @@ Overall, virtual reality has the potential to revolutionize the way we interact 
         <br>
         <label for="r-z">Z Rotate:</label>
         <input type="number" id="r-z" name="rz" value="0.00">
-        <button type="button" onclick = "updatePos()">submit</button>
-        <button type="button" onclick = "reset()">Reset</button>
       </section>
+      <button type="button" onclick = "updatePos()">submit</button>
+      <button type="button" onclick = "reset()">Reset</button>
     </form>
+    </div>
+    
 
     <?php
         if(!isset($_SESSION['name'])) //this will redirect the user to login page if the user is not log in
@@ -233,8 +254,8 @@ Overall, virtual reality has the potential to revolutionize the way we interact 
                 fwrite($f_open,$members_stat_count);// writing the hit counter message into the text file 
                 fclose($f_open); // closing the text file
               }
-              echo "<p>"."Hello ". $_SESSION['name']."</p>";	//displays the welcome message by displaying user's email address 
-              echo "<p class='success'>".$success_msg."</p>"; //this is to display the log in success message
+              // echo "<p>"."Hello ". $_SESSION['name']."</p>";	//displays the welcome message by displaying user's email address 
+              // echo "<p class='success'>".$success_msg."</p>"; //this is to display the log in success message
 
         } 
         ?>

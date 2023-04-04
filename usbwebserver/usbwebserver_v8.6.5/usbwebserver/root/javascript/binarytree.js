@@ -1,6 +1,7 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 let foundNode = 0;
+let delay = 1500;
 class Node {
   constructor(value) {
     this.value = value;
@@ -59,6 +60,7 @@ class BinaryTree {
       } else {
         found = true;
         foundNode = value;
+        delay = 0;
       }
     }
 
@@ -96,6 +98,11 @@ class BinaryTree {
     return this;
   }
 
+  //Helper function to empty the binary tree
+  empty(){
+    this.root = null;
+  }
+
 
   // Helper function to get the height of the tree
   getHeight(node) {
@@ -126,6 +133,8 @@ class BinaryTree {
   // Helper function to draw text inside a circle
   drawText(x, y, text, color) {
     ctx.fillStyle = color;
+    ctx.font = "15px Arial";
+    ctx.textAlign = "center";
     ctx.fillText(text, x, y);
   }
 
@@ -137,30 +146,31 @@ class BinaryTree {
 
     // Calculate the y-coordinate of the node based on its level and the vertical spacing
     const nodeY = y + level * this.verticalSpacing;
-
+    setTimeout(()=>{
     // Draw the left child recursively
     if (node.left) {
       const leftX = x - this.horizontalSpacing / Math.pow(2, level);
       const leftY = nodeY + this.verticalSpacing;
-      // ctx.beginPath();
-      // ctx.moveTo(x, nodeY + this.nodeRadius);
-      // ctx.lineTo(leftX + this.nodeRadius * 2, leftY);
-      // ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, nodeY + this.nodeRadius);
+      ctx.lineTo(leftX + this.nodeRadius * 2, leftY);
+      ctx.stroke();
       this.drawNode(node.left, level + 1, leftX, leftY);
       console.log("level"+level)
     }
-
+  },delay);
+  setTimeout(()=>{
     // Draw the right child recursively
     if (node.right) {
       const rightX = x + this.horizontalSpacing / Math.pow(2, level);
       const rightY = nodeY + this.verticalSpacing;
-      // ctx.beginPath();
-      // ctx.moveTo(x, nodeY + this.nodeRadius);
-      // ctx.lineTo(rightX - this.nodeRadius * 2, rightY);
-      // ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(x, nodeY + this.nodeRadius);
+      ctx.lineTo(rightX - this.nodeRadius * 2, rightY);
+      ctx.stroke();
       this.drawNode(node.right, level + 1, rightX, rightY);
     }
-
+  },delay);
     // Draw the current node
     let color = 'white';
     if(foundNode == node.value){
@@ -171,6 +181,7 @@ class BinaryTree {
     
     this.drawCircle(x, nodeY, this.nodeRadius, color);
     this.drawText(x, nodeY, node.value.toString(), 'black');
+
   }
 
   // Public function to draw the binary tree onto a canvas element
@@ -186,7 +197,7 @@ class BinaryTree {
     this.drawNode(this.root, 1, centerX, this.nodeRadius);
   }
 }
-// Usage example:
+// execuding binary tree:
 const tree = new BinaryTree();
 for (let i = 0; i< 7;i++){
   let rand = Math.floor(Math.random() * 100); 
@@ -216,9 +227,10 @@ document.forms[0].addEventListener('submit', function(event) {
   }else{
     output.innerHTML = `${value} values are allowed`
   }
-  
+
   document.querySelector('#insert-value').value = '';
 });
+
 
 document.forms[1].addEventListener('submit', function(event) {
   event.preventDefault();
@@ -259,3 +271,18 @@ document.querySelector('#remove-value').addEventListener('click', function(event
 });
 
 tree.draw(canvas);
+
+document.querySelector('#generate-value').addEventListener('click', function(event) {
+  tree.empty();
+  let tempRand = 0;
+  let rand = [];
+  for (let i = 0; i< 7;i++){
+    tempRand = Math.floor(Math.random() * 100); 
+    tree.add(tempRand+i);
+    console.log(tempRand+i);
+    rand[i] = tempRand+i;
+  }
+  output.innerHTML = `${rand}`
+  delay = 1500;
+  tree.draw(canvas);
+});

@@ -45,17 +45,28 @@
     <canvas id="canvas" width="800" height="1000"></canvas>
 
     <h1>Binary Search Tree</h1>
+    <div class="frms-container">
     <form>
+      <div class="frms">
       <label for="insert-value">Insert value:</label>
       <input type="text" id="insert-value" />
       <button type="submit">Insert</button>
+      </div>
     </form>
-    <form>
+    <form >
+      <div class="frms">
       <label for="find-value">Find value:</label>
       <input type="text" id="find-value" />
       <button type="submit">Find</button>
       <button type="button" id="remove-value">Remove</button>
+      </div>
+
     </form>
+    <form>
+    <button type="button" id="generate-value">Random Tree</button>
+    </form>
+    </div>
+
     <div class="output"></div>
     <script src="javascript/binarytree.js"></script>
 	</div>

@@ -65,8 +65,8 @@
 			<img src="img/tree-banner.png" alt="Avatar" style="width:100%">
 		</a>
 	<div class="container">
-		<h4><b>Virtual reality</b></h4> 
-		<p>Virtual Reality related topics</p> 
+		<h4><b>Tree Data Structure</b></h4> 
+		<p>Treev Data Structure related topics</p> 
 	</div>
 	</div>
 <!-- <div class="box-a">
