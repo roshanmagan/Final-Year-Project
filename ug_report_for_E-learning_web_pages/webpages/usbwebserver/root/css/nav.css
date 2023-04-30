@@ -1,0 +1,86 @@
+body{
+  margin: 0 auto;
+  margin-left: 10px;
+  background: linear-gradient(-45deg, #bbbbbb, #2b2b2b, #4f5355, #000000);
+  background-attachment: fixed;
+	background-size: cover;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+/*container for nav bar*/
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    background-color: #111;
+    color: #fff;
+    padding: 0 20px;
+
+  }
+  
+  /*all the a tags*/
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+  }
+  
+  /*for hovering effect*/
+  .navbar a:hover {
+    color: #ccc;
+  }
+  
+  /*for the dropdown effect*/
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /*dropdown buttons styling*/
+  .dropbtn {
+    background-color: #0d0d0d;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius:10px 10px 0 0;
+  }
+  
+  /*styling for dropdown list element*/
+  .dropbtn i {
+    margin-left: 10px;
+    font-size: 14px;
+  }
+  
+  .dropdown-list {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-list a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-list a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-list {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    padding-top: 10px;
+    background-color: #ccc;
+  }
+  

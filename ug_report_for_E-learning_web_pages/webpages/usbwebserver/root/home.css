@@ -1,0 +1,46 @@
+.box-a{
+  width: 100%;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  background-color: #888888;
+  background-image: url("img/math-banner.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+
+}
+.box-a:hover{
+  background-color: rgb(240, 240, 240);
+}
+
+.button-list{
+  text-align: center;
+  list-style: none;
+}
+
+.button-a{
+  color: white;
+  text-decoration: none;
+  font-size: 50px;
+  text-shadow: #F0F0F0 1px 0 10px;
+}
+
+.button-a:hover{
+  background-color: #E7ECEF;
+  color: black;
+  border-radius: 10px;
+  text-shadow: 2px 2px #F0F0F0;
+}
+
+.box-b{
+  width: 100%;
+  padding-top: 250px;
+  padding-bottom: 250px;
+  background-color: rgb(136, 136, 136);
+  background-image: url("img/vr-banner.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+
+.box-b:hover{
+  background-color: rgb(240, 240, 240);
+}
